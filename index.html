@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="invie.css" />
 		<!-- <link rel="stylesheet" media="(max-width: 800px)" type="text/css" href="css/media-query.css"> --> 
 		<link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
 	</head>
 	<body>
 		<section id="portada" class="portada background"> <!-- portada -->
@@ -104,13 +105,26 @@
       </div>
     </footer>
     <script>
+    	var consulta = window.matchMedia('(max-width:500px)');
+    	consulta.addListener(mediaQuery);
     	var $burguerButton = document.getElementById('burguer-button');
     	var $menu = document.getElementById('menu');
-    	$burguerButton.addEventListener("touchStart", mostrarMenu);
-
+    	
     	function mostrarMenu() {
-    		$menu.classList.toggle('active');
+		    $menu.classList.toggle('active');
+		  }
+
+    	function mediaQuery() {
+	    	if (consulta.matches) {
+	    		console.log("hola");
+	    		$burguerButton.addEventListener("touchstart", mostrarMenu);
+
+	    	} else {
+	    		console.log("chau");
+	    		$burguerButton.removeEventListener("touchstart", mostrarMenu);
+	    	}
     	}
+    	mediaQuery()
     </script>
   </body>
 </html>

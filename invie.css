@@ -438,7 +438,7 @@ input:focus, textarea:focus {
     display: flex;
     align-items: center;
     width: 100%;
-    transition: .3s;
+    transition: .4s;
   }
   
   .menu.active {
