@@ -292,6 +292,7 @@ input:focus, textarea:focus {
   border-radius: 50%;
   height: 40px;
   background-color: #395667;
+  color: white;
   position: absolute;
   cursor: pointer;
   left: 20px;
@@ -300,6 +301,18 @@ input:focus, textarea:focus {
 }
 
 @media screen and (max-width: 800px) { /*TABLETS*/
+  /*tabla*/
+  .tabla {
+    margin: 50px 20px;
+  }
+
+  .table .contenedor {
+    overflow: auto;
+    border: 1px solid #273b47;
+  }
+  /*tabla*/
+
+  /*Portada*/
   .titulo {
     font-size: 45px;
     margin-top: 30px;
@@ -321,6 +334,7 @@ input:focus, textarea:focus {
   .contenedor {
     margin-bottom: 0;
   }
+  /*Portada*/
 
   /* guitarras */
 
@@ -427,6 +441,15 @@ input:focus, textarea:focus {
   .portada .contenedor {
     position: static;
   }
+  
+  .header {
+    position: static;
+    padding: 10px 0;
+  }
+
+  .header .contenedor {
+    position: static;
+  }
 
   .menu {
     background: rgba(255, 60, 88, .8);
@@ -441,7 +464,7 @@ input:focus, textarea:focus {
     width: 100%;
     transition: .4s;
   }
-  
+
   .menu.active {
     left: 0;
   }
