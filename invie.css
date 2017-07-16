@@ -304,12 +304,10 @@ input:focus, textarea:focus {
   /*tabla*/
   .tabla {
     margin: 50px 20px;
-  }
-
-  .table .contenedor {
     overflow: auto;
     border: 1px solid #273b47;
   }
+
   /*tabla*/
 
   /*Portada*/
