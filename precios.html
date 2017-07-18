@@ -7,7 +7,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">  
 	</head>
-	<body>
+	<body class="precios">
 		<header id="header" class="header background">	<!-- header -->
 			<div class="contenedor">
 				<figure class="logotipo"> <!-- logotipo -->
@@ -116,6 +116,7 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script>
     //media query
     	var consulta = window.matchMedia('(max-width:500px)');
@@ -123,18 +124,24 @@
     	var $burguerButton = document.getElementById('burguer-button');
     	var $menu = document.getElementById('menu');
 
-    	function mostrarMenu() {
+    	function toggleMenu() {
 		    $menu.classList.toggle('active');
+		  }
+		  function showMenu() {
+		    $menu.classList.add('active');
+		  }
+		  function hideMenu() {
+		    $menu.classList.remove('active');
 		  }
 
     	function mediaQuery() {
 	    	if (consulta.matches) {
 	    		console.log("hola");
-	    		$burguerButton.addEventListener("touchstart", mostrarMenu);
+	    		$burguerButton.addEventListener("touchstart", toggleMenu);
 
 	    	} else {
 	    		console.log("chau");
-	    		$burguerButton.removeEventListener("touchstart", mostrarMenu);
+	    		$burguerButton.removeEventListener("touchstart", toggleMenu);
 	    	}
     	}
     	mediaQuery()
@@ -144,6 +151,13 @@
         var bLazy = new Blazy();
           selector: 'img' //todas las imagenes
       })();
+
+      //Gestos touch
+        var $body = document.body;
+
+        var gestos = new Hammer($body);
+				gestos.on('swipeleft', hideMenu);
+				gestos.on('swiperight', showMenu);
     </script>
 	</body>
 </html>

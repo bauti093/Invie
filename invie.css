@@ -170,7 +170,7 @@ input:focus, textarea:focus {
 }
 
 .guitarra {
-  margin: 55px 10px 40px 10px;
+  margin: 10px 10px 40px 10px;
   padding: 10px;
   border: 1px solid #1F313C;
   border-radius: 8px;
@@ -293,15 +293,32 @@ input:focus, textarea:focus {
   height: 40px;
   background-color: #395667;
   color: white;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   left: 20px;
   top: 20px;
   z-index: 3;
+  display: none;
+}
+
+.video-demo {
+  max-width: 500px;
+  width: 100%;
+  border: 5px solid #3c5b6e;
+}
+
+.video-demo-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
 }
 
 @media screen and (max-width: 800px) { /*TABLETS*/
   /*tabla*/
+  .precios .header .logotipo {
+    padding: 15px 0 0 20px;
+  }
+
   .tabla {
     margin: 50px 20px;
     overflow: auto;
@@ -335,6 +352,10 @@ input:focus, textarea:focus {
   /*Portada*/
 
   /* guitarras */
+
+  .video-demo-contenedor {
+    margin-bottom: 0;
+  }
 
   .guitarras {
     text-align: center;
@@ -436,22 +457,34 @@ input:focus, textarea:focus {
 
 @media screen and (max-width: 500px) {
   /*portada*/
+
+  .precios .header .logotipo {
+    margin: 50px 0;
+  }
+
+  .portada .button {
+    display: block;
+  }
+
   .portada .contenedor {
     position: static;
   }
   
   .header {
     position: static;
-    padding: 10px 0;
   }
 
   .header .contenedor {
     position: static;
   }
 
+  .burguer-button {
+    display: block;
+  }
+
   .menu {
     background: rgba(255, 60, 88, .8);
-    position: absolute;
+    position: fixed;
     left: -100%;
     top: 0;
     z-index: 2;
@@ -508,8 +541,17 @@ input:focus, textarea:focus {
     font-size: 30px;
   }
 
+  .video-demo-contenedor {
+    margin: 0 10px 30px 10px;
+  }
+
   /*guitarras*/
 
+  /*formulario*/
+  .formulario .col2 {
+    align-items: stretch;
+  }
+  /*formulario*/
 }
 
 .contenedor-video {
@@ -527,7 +569,7 @@ input:focus, textarea:focus {
   height: 100%;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 1 ) {
+@media screen and (-webkit-min-device-pixel-ratio: 2 ) {
   .background {
     background-image: url("images/background2x.png")
   }
